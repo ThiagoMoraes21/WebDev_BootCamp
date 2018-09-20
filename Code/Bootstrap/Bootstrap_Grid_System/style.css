@@ -1,0 +1,10 @@
+.box {
+  background-color: lightblue;
+  color: #fff;
+  border: 1px solid darkgray;
+  height: 280px;
+}
+
+.container {
+  margin-top: 15vh;
+}
