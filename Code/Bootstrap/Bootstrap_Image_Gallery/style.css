@@ -42,3 +42,7 @@ h1, p {
     color: var(--main-text-color);
     text-shadow: var(--secondary-neon);
 }
+
+.thumbnail {
+  box-shadow: var(--secondary-neon);
+}
