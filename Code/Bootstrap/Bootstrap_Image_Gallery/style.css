@@ -2,20 +2,26 @@ body {
   background-image: radial-gradient(#52b5eb, #091f32);
 }
 
+:root {
+  --main-text-color: #fff;
+  --primary-neon: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  --secondary-neon: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #69e6ee, 0 0 35px #69e6ee, 0 0 40px #69e6ee, 0 0 50px #69e6ee, 0 0 75px #69e6ee;
+}
+
 img {
   max-width: 100%;
 }
 
 .jumbotron {
-  color: #fff;
+  color: var(--main-text-color);
   /*background-image: radial-gradient(#6bc9f5, #2f6e96);*/
   background-image: url("https://source.unsplash.com/0JD7kvxAq0Y");
 }
 
 h1, p {
-  color: #fff;
+  color: var(--main-text-color);
   font-weight: 200;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  text-shadow: var(--primary-neon);
 }
 
 .navbar {
@@ -24,8 +30,8 @@ h1, p {
 }
 
 .navbar-default .navbar-nav>li>a {
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF1177, 0 0 35px #FF1177, 0 0 40px #FF1177, 0 0 50px #FF1177, 0 0 75px #FF1177;
+  color: var(--main-text-color);
+  text-shadow: var(--primary-neon);
 }
 
 .navbar-default {
@@ -33,6 +39,6 @@ h1, p {
 }
 
 .navbar-default .navbar-brand {
-    color: #fff;
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #69e6ee, 0 0 35px #69e6ee, 0 0 40px #69e6ee, 0 0 50px #69e6ee, 0 0 75px #69e6ee;
+    color: var(--main-text-color);
+    text-shadow: var(--secondary-neon);
 }
