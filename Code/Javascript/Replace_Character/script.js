@@ -8,6 +8,6 @@ function replaceChar(str) {
   return str.replace(/-/g, "_");
 }
 
-var frase = prompt("Write a frase using \"-\" as space ");
+var frase = prompt("Write a phrase using \"-\" as space ");
 var result = replaceChar(frase);
 var output = document.getElementById('output').innerHTML = result;
