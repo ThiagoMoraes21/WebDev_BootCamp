@@ -1,4 +1,3 @@
-
 var colors = ["red", "yellow", "orange"];
 
 // Creating a forEach function
@@ -14,7 +13,6 @@ myForEach(colors, function(color){
   console.log(color);
 });
 
-
 // Creating a forEach Object
 Array.prototype.myOtherForEach = function(func){
   for(var i = 0; i < this.length; i++){
@@ -22,7 +20,7 @@ Array.prototype.myOtherForEach = function(func){
   }
 }
 
-console.log("******************\nOther function\n******************");
+console.log("***************\nOther function\n***************");
 colors.myOtherForEach(function(el){
   console.log(el);
 });
