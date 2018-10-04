@@ -1,0 +1,26 @@
+body{
+  background-color: #232323;
+}
+
+.square {
+  width: 30%;
+  background-color: purple;
+  padding-bottom: 30%;
+  float: left;
+  margin: 1.66%;
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+span {
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+}
