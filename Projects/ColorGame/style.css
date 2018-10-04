@@ -1,5 +1,8 @@
 body{
   background-color: #232323;
+  padding: 0;
+  margin: 0;
+  font-family: "Avenir";
 }
 
 .square {
@@ -10,11 +13,12 @@ body{
   margin: 1.66%;
   transition: all 0.2s ease-in-out;
   border-radius: 15px;
+  cursor: pointer;
 }
 
 #container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 
 #stripe {
@@ -24,12 +28,45 @@ body{
   color: #000;
 }
 
+#message {
+  display: inline-block;
+  width: 20%;
+}
+
+#colorDisplay {
+  font-size: 1.3em;
+}
 
 h1 {
+  background-color: #287c7a;
   color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 20px 0;
+  height: 20vh;
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .selected {
-  background-color: rgb(57, 104, 215);
+  background-color: #287c7a;
   color: #fff;
+}
+
+button {
+  border: none;
+  background-color: none;
+  text-transform: uppercase;
+  font-size: inherit;
+  height: 100%;
+  color: #287c7a;
+  font-weight: 700;
+  letter-spacing: 1px;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #287c7a;
 }

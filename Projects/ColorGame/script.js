@@ -111,7 +111,7 @@ function resetGame(){
     squares[i].style.backgroundColor = colors[i];
   }
   // reset the h1 backgroundColor
-  h1.style.backgroundColor = "#232323";
+  h1.style.backgroundColor = "#287c7a";
   // reset the message
   messageDisplay.textContent = "";
   // reset the btn text content
