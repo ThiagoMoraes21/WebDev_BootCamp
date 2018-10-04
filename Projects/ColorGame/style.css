@@ -28,3 +28,8 @@ body{
 h1 {
   color: #fff;
 }
+
+.selected {
+  background-color: rgb(57, 104, 215);
+  color: #fff;
+}
