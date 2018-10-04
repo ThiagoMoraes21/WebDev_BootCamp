@@ -17,9 +17,13 @@ body{
   margin: 0 auto;
 }
 
-span {
-  color: #fff;
+#stripe {
+  background-color: #fff;
+  text-align: center;
+  height: 30px;
+  color: #000;
 }
+
 
 h1 {
   color: #fff;
