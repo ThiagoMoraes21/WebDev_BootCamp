@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.forest {
+  background-image:
+    linear-gradient(to right, #2C442C, #8CA483);
+}
+
+.vulcano {
+  background-image:
+    linear-gradient(to right, #2C2414, #D7321D );
+}
+
+.ocean {
+  background-image:
+    linear-gradient(to right, #063858, #208CB3);
+}
+
+.btn-group, .btn-group-vertical {
+  margin-top: 20%;
+  left: 30%;
+}
