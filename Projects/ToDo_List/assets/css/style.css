@@ -28,8 +28,13 @@ h1 {
   font-weight: normal;
 }
 
-.fa-angle-up, .fa-angle-down {
+.fa-angle-up {
   float: right;
+  transition: all 0.3s ease-in-out;
+}
+
+.turnArrow {
+  transform: rotate(180deg);
 }
 
 li {

@@ -21,3 +21,8 @@ $("input[type='text']").on("keypress",function(event){
     $('ul').append("<li><span><i class='far fa-trash-alt'></i></span> " + todoText + "</li>");
   }
 });
+
+$(".fa-angle-up").on("click", function(){
+  $("input[type='text']").fadeToggle();
+  $(this).toggleClass("turnArrow");
+});
