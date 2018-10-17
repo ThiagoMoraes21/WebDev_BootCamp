@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-
+var port = process.env.PORT || 3000;
 app.get("/", function(req, res){
   console.log("Got a request to '/'");
   res.send("Hi there, wecome to my assignment!");
@@ -39,6 +39,6 @@ app.get("*", function(req, res){
 });
 
 
-app.listen(3000, function(){
-  console.log("Server running on port 3000");
+app.listen(port, function(){
+  console.log("Server running on port " + port);
 });
