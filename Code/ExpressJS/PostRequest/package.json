@@ -1,0 +1,15 @@
+{
+  "name": "postrequest",
+  "version": "1.0.0",
+  "description": "Post Request Demo app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ThiagoMoraes21/WebDev_BootCamp/tree/master/Code/ExpressJS"
+  },
+  "author": "Thiago",
+  "license": "ISC"
+}

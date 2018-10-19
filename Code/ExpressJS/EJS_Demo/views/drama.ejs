@@ -1,4 +1,6 @@
-<h1>This is a dramatic picture of: <%= dramaPic %></h1>
+<% include partials/header %>
+
+<h1>This are dramatic pictures of: <%= dramaPic %></h1>
 
 <% if(dramaPic === "woman"){ %>
   <img src="https://source.unsplash.com/ehc4tN4DXHY" alt="dramatic photo">
@@ -9,3 +11,5 @@
   <img src="https://source.unsplash.com/uFomxGheuGk" alt="">
   <img src="https://source.unsplash.com/XvSio7n_X6k" alt="">
   <% } %>
+
+<% include partials/footer %>
