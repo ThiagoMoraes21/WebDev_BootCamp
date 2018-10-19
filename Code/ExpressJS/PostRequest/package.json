@@ -11,5 +11,10 @@
     "url": "https://github.com/ThiagoMoraes21/WebDev_BootCamp/tree/master/Code/ExpressJS"
   },
   "author": "Thiago",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
 }
