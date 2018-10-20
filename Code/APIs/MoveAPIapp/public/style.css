@@ -4,11 +4,11 @@ body {
   text-align: center;
   font-weight: normal;
   font-family: 'Roboto', sans-serif;
-  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  background: linear-gradient(to right, #c94b4b, #4b134f);
 }
 
 h1 {
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: rgba(48, 43, 99, 0.6);
   color: #fff;
   width: 100%;
   height: 50px;
@@ -39,24 +39,37 @@ a {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  font-size: 1.4em;
+  font-size: 1.1em;
+  cursor: pointer;
 }
 
 .btn {
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
-  width: 30vh;
+  background: rgba(48, 43, 99, 0.6);
+  width: 20%;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 50px;
   margin: 0 auto;
   line-height: 50px
 }
 
 input {
-  width: 100%;
-  height: 50px;
+  width: 60%;
+  height: 48px;
   font-size: 1.4em;
+  margin: 20% auto;
+  border-radius: 50px;
+  text-align: center;
+  border: none;
+  outline: none;
+  box-shadow: 4px 4px 14px rgba(48, 43, 99, 0.2);
 }
 
 input[type="submit" i] {
   color: #fff;
+  margin: 31px auto;
+  position: relative;
+  margin-left: 10px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 4px 4px 14px rgba(36, 36, 62, 0.4);
 }
