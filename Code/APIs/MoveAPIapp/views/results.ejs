@@ -1,0 +1,19 @@
+<% include layouts/header %>
+
+<h1>Results Page</h1>
+
+<ul>
+  <% data["Search"].forEach(function(movie){ %>
+      <li>
+        <%= movie["Title"] %> - <%= movie["Year"] %><br />
+       <img src=<%= movie["Poster"] %>>
+      </li>
+  <% }); %>
+
+</ul>
+
+<div class="btn">
+  <a href="/">Back to Search</a>
+</div>
+
+<% include layouts/footer %>
