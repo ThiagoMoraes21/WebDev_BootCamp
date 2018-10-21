@@ -27,6 +27,38 @@ var campgrounds = [
   {
     name: "Mountains Ghost's Rest",
     image: "https://source.unsplash.com/XJuhZqEE4Go"
+  },
+  {
+    name: "Some Camp",
+    image: "https://source.unsplash.com/eJ_OyOeGFHI"
+  },
+  {
+    name: "Granite Hill",
+    image: "https://source.unsplash.com/1azAjl8FTnU"
+  },
+  {
+    name: "Lagosta Camp",
+    image: "https://source.unsplash.com/W6dRiZHDZAo"
+  },
+  {
+    name: "Mountains Ghost's Rest",
+    image: "https://source.unsplash.com/XJuhZqEE4Go"
+  },
+  {
+    name: "Some Camp",
+    image: "https://source.unsplash.com/eJ_OyOeGFHI"
+  },
+  {
+    name: "Granite Hill",
+    image: "https://source.unsplash.com/1azAjl8FTnU"
+  },
+  {
+    name: "Lagosta Camp",
+    image: "https://source.unsplash.com/W6dRiZHDZAo"
+  },
+  {
+    name: "Mountains Ghost's Rest",
+    image: "https://source.unsplash.com/XJuhZqEE4Go"
   }
 ];
 
@@ -40,6 +72,7 @@ app.post("/campgrounds", function(req, res){
   var image = req.body.image;
   var newCampground = {name: name, image: image};
   campgrounds.push(newCampground);
+  
   // redirect back to campgrounds page
   res.redirect("/campgrounds");
 });

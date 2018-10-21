@@ -3,6 +3,17 @@ img {
 }
 
 .image-box {
-  margin: 0 auto;
-  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  float: left;
+}
+
+form {
+  width: 30%;
+  margin: 40px auto;
+}
+
+.camp-form {
+  text-align: center;
 }
