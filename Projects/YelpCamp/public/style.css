@@ -17,3 +17,27 @@ form {
 .camp-form {
   text-align: center;
 }
+
+.bg-new {
+  background-image: url('https://source.unsplash.com/3fJOXw1RbPo');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  padding: 100px 50px;
+  z-index: -1000;
+}
+
+.jumbotron {
+  background-image: url('https://source.unsplash.com/3fJOXw1RbPo');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+}
+
+h1 {
+  color: #fff;
+}
