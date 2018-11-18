@@ -1,0 +1,10 @@
+<% include partials/header %>
+  <div class="ui main text container segment">
+    <div class="ui huge header">
+      <%= blog.title %>
+    </div>
+    <img src="<%= blog.image %>"><br  />
+    <span><%= blog.created.toDateString() %></span>
+    <p><%- blog.body %></p>
+  </div>
+<% include partials/footer %>

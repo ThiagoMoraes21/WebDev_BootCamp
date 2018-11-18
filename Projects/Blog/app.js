@@ -56,6 +56,22 @@ app.post("/blogs", function(req, res){
   });
 });
 
+//  show reoute
+app.get("/blogs/:id", function(req, res){
+  Blog.findById(req.params.id, function(err, foundBlog){
+    if (err) {
+      console.log(err);
+      res.send("BLOG POST NOT FOUND");
+    } else {
+      res.render("show", {blog: foundBlog});
+    }
+  });
+});
+
+app.get("*", function(req, res){
+  res.send("ERROR 404 (PAGE NOT FOUND)");
+});
+
 app.listen(port, function() {
   console.log("Server is running at port: " + port);
 });
