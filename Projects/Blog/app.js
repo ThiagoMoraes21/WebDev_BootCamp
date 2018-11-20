@@ -2,12 +2,14 @@ var express = require('express'),
     app = express(),
     port  = process.env.PORT || 3000,
     bodyParser = require('body-parser'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    methodOverrid = require('method-override');
 
 //  APP CONFIG
 mongoose.connect('mongodb://localhost/blog', { useNewUrlParser: true });
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(methodOverrid('_method'));
 app.set('view engine', 'ejs');
 
 //  MONGOOSE/MODEL CONFIG
@@ -56,7 +58,7 @@ app.post("/blogs", function(req, res){
   });
 });
 
-//  show reoute
+//  show route
 app.get("/blogs/:id", function(req, res){
   Blog.findById(req.params.id, function(err, foundBlog){
     if (err) {
@@ -68,6 +70,33 @@ app.get("/blogs/:id", function(req, res){
   });
 });
 
+//  edit route
+app.get("/blogs/:id/edit", function(req, res){
+  Blog.findById(req.params.id, function(err, foundBlog){
+    if (err) {
+      console.log(err);
+      res.redirect("/blogs");
+    } else {
+      // render the edit form
+      res.render("edit", {blog: foundBlog});
+    }
+  });
+});
+
+//  update route
+app.put("/blogs/:id", function(req, res){
+  // Blog.findByIdAndUpdate(id, newData, callback)
+  Blog.findByIdAndUpdate(req.params.id, req.body.blog, function(err, updatedBlog){
+    if (err){
+      console.log(err);
+      res.redirect("/blogs");
+    } else {
+      res.redirect("/blogs/" + req.params.id);
+    }
+  });
+});
+
+//  404 erro handling route
 app.get("*", function(req, res){
   res.send("ERROR 404 (PAGE NOT FOUND)");
 });
