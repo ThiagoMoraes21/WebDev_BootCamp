@@ -96,6 +96,19 @@ app.put("/blogs/:id", function(req, res){
   });
 });
 
+//  delete route
+app.delete("/blogs/:id", function(req, res){
+  // destroy blog
+  Blog.findByIdAndRemove(req.params.id, function(err){
+    if(err){
+      console.log(err);
+      res.redirect("/blogs");
+    } else {
+      res.redirect("/blogs");
+    }
+  });
+});
+
 //  404 erro handling route
 app.get("*", function(req, res){
   res.send("ERROR 404 (PAGE NOT FOUND)");

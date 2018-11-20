@@ -17,3 +17,7 @@ i.icon {
 img {
   max-width: 100%;
 }
+
+#delete {
+  display: inline;
+}

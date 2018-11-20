@@ -6,5 +6,9 @@
     <img src="<%= blog.image %>"><br  />
     <span><%= blog.created.toDateString() %></span>
     <p><%- blog.body %></p>
+    <a class="ui blue button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+    <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+      <button class="ui red button">Delete</button>
+    </form>
   </div>
 <% include partials/footer %>
