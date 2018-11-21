@@ -1,7 +1,17 @@
 <% include partials/header %>
-  <div class="container bg-new">
+<div class="container row bg-new">
+  <div class="container jumbotron show">
+    <img class="bg-show-page" src="<%= campground.image %>" alt="<%= campground.name %>">
     <h1><%= campground.name %> </h1>
-    <img src="<%= campground.image %>" alt="<%= campground.name %>">
     <p><%= campground.description %></p>
   </div>
+  <div class="container comments-section">
+    <h3><strong>Comments</strong></h3><hr><br>
+    <% campground.comments.forEach(function(comment){ %>
+      <div class="container">
+        <p><strong><%= comment.author %></strong>: <%= comment.text %></p>
+      </div>
+    <% }); %>
+  </div>
+</div>
 <% include partials/footer %>
