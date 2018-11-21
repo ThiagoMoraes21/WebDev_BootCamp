@@ -71,8 +71,9 @@ h1, h3 {
 .comments-section {
   color: #fff;
   background-color: #303030;
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
   padding: 20px;
   margin: 0 auto;
+  text-align: center;
 }

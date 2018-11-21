@@ -1,4 +1,4 @@
-<% include partials/header %>
+<% include ../partials/header %>
 <div class="container row bg-new">
   <div class="container jumbotron show">
     <img class="bg-show-page" src="<%= campground.image %>" alt="<%= campground.name %>">
@@ -8,10 +8,9 @@
   <div class="container comments-section">
     <h3><strong>Comments</strong></h3><hr><br>
     <% campground.comments.forEach(function(comment){ %>
-      <div class="container">
-        <p><strong><%= comment.author %></strong>: <%= comment.text %></p>
-      </div>
+      <p><strong><%= comment.author %></strong>: <%= comment.text %></p><hr />
     <% }); %>
+    <a class="btn btn-primary btn-md" href="/campgrounds/<%= campground._id %>/comments/new">Add new comment</a>
   </div>
 </div>
-<% include partials/footer %>
+<% include ../partials/footer %>
