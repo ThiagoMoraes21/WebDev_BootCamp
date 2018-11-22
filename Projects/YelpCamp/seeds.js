@@ -21,22 +21,22 @@ var data = [
     {
       name : "Lagosta Camp",
       image : "https://source.unsplash.com/W6dRiZHDZAo",
-      description : "This is the Lagosta Camp. A place where you can fish lagostas! No equipament incluede..."
+      description : "This is the Lagosta Camp. A place where you can fish lagostas! No equipament incluede...consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
     },
     {
       name : "Granite Hill",
       image : "https://source.unsplash.com/1azAjl8FTnU",
-      description : "The best place to chill on earth! Free breakfast. Free water and snaks too"
+      description : "The best place to chill on earth! Free breakfast. Free water and snaks too consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
     },
     {
       name : "Some Camp",
       image : "https://source.unsplash.com/eJ_OyOeGFHI",
-      description : "It's some campground out there!"
+      description : "It's some campground out there!consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
     },
     {
       name : "Mountains Ghost's Rest",
       image : "https://source.unsplash.com/XJuhZqEE4Go",
-      description : "That's the mountains where the ghost's rest"
+      description : "That's the mountains where the ghost's rest consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
     }
 ]
 
