@@ -1,9 +1,11 @@
-body {
-  background-color: #202020;
-  background-image: url('https://source.unsplash.com/3fJOXw1RbPo');
-  background-size: cover;
-  background-position: center left;
-  background-repeat: no-repeat;
+body, html {
+  background: #154d8c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #154d8c, #3182bf);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #154d8c, #3182bf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
 }
 
 h1, h3, h4 {
@@ -19,6 +21,10 @@ form {
   margin: 40px auto;
 }
 
+.navbar {
+  margin-bottom: 0px;
+}
+
 .image-box {
   display: flex;
   flex-wrap: wrap;
@@ -28,6 +34,7 @@ form {
 
 .camp-form {
   text-align: center;
+  margin-top: 40px;
 }
 
 .some-space {
@@ -50,10 +57,25 @@ form {
   background-position: center;
   color: #fff;
   background-color: #303030;
+  height: 60vh;
+  text-align: center;
 }
 
-.jumbotron.landing{
+.jumbotron.landing, .bg-main{
   background-image: url('https://source.unsplash.com/3fJOXw1RbPo');
+}
+
+.container {
+  height: 100%;
+}
+
+.bg-main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  /* height: 100vh; */
+  position: absolute;
 }
 
 .comments-section {
@@ -83,6 +105,14 @@ form {
 
 .thumbnail .caption-full {
   padding: 10px;
+}
+
+.thumbnail .caption {
+  text-align: center;
+}
+
+.thumbnail p {
+  text-align: center;
 }
 
 .lead {
