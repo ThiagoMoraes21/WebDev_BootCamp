@@ -21,12 +21,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.set('view engine', 'ejs');
 
+passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-/****************
-  ROUTES
-*****************/
+//=================
+//  ROUTES
+//=================
 app.get('/', function(req, res){
   res.render('home');
 });
@@ -35,7 +36,9 @@ app.get('/secret', function(req, res){
   res.render('secret');
 });
 
+//=================
 //  AUTH ROUTES
+//=================
 
 //  show sing up form
 app.get('/register', function(req, res){
@@ -57,6 +60,23 @@ app.post('/register', function(req, res){
         res.redirect('/secret');
       });
     });
+});
+
+//=================
+//  LOGIN ROUTES
+//=================
+
+//  render the login form
+app.get('/login', function(req, res){
+  res.render('login');
+});
+
+//  login logic
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/secret',
+  failureRedirect: '/login'
+}), function(req, res){
+  // write the callback here
 });
 
 app.get('*', function(req, res){
