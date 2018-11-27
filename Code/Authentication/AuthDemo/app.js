@@ -32,7 +32,7 @@ app.get('/', function(req, res){
   res.render('home');
 });
 
-app.get('/secret', function(req, res){
+app.get('/secret', isLoggedIn, function(req, res){
   res.render('secret');
 });
 
@@ -78,6 +78,20 @@ app.post('/login', passport.authenticate('local', {
 }), function(req, res){
   // write the callback here
 });
+
+// logout
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
+
+function isLoggedIn(req, res, next){
+  if (req.isAuthenticated()) {
+    // if user is authenticated execute the next parameter
+    return next();
+  }
+  res.redirect('/login');
+}
 
 app.get('*', function(req, res){
   res.send("ERROR 404 (PAGE NOT FOUND)");
