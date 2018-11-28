@@ -124,7 +124,7 @@ app.get('/register', function(req, res){
   res.render('register');
 });
 
-//  handle sign up logic
+//  handling sign up logic
 app.post('/register', function(req, res){
   var newUser = new User({username: req.body.username});
   User.register(newUser, req.body.password, function(err, user){
@@ -138,6 +138,18 @@ app.post('/register', function(req, res){
   });
 });
 
+//  show login form
+app.get('/login', function(req, res){
+  res.render('login');
+});
+
+//  handling the login logic
+app.post('/login', passport.authenticate('local', {
+  successRedirect: '/campgrounds',
+  failureRedirect: '/login'
+}),
+ function(req, res){
+});
 
 // ERROR 404 PAGE NOT FOUND
 app.get("*", function(req, res){
