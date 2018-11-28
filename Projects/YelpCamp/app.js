@@ -83,7 +83,7 @@ app.get("/campgrounds/:id", function(req, res){
 //  COMMENTS ROUTES
 // ====================
 
-app.get("/campgrounds/:id/comments/new", function(req, res){
+app.get("/campgrounds/:id/comments/new", isLoggedIn, function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if (err) {
       console.log(err);
@@ -93,7 +93,7 @@ app.get("/campgrounds/:id/comments/new", function(req, res){
   });
 });
 
-app.post("/campgrounds/:id/comments", function(req, res){
+app.post("/campgrounds/:id/comments", isLoggedIn, function(req, res){
   //  lookup campground using ID
   Campground.findById(req.params.id, function(err, campground){
     if (err) {
@@ -150,6 +150,20 @@ app.post('/login', passport.authenticate('local', {
 }),
  function(req, res){
 });
+
+//  logout logic route
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/campgrounds');
+});
+
+//  check user authentication
+function isLoggedIn(req, res, next){
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+}
 
 // ERROR 404 PAGE NOT FOUND
 app.get("*", function(req, res){
