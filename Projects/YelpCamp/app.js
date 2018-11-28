@@ -19,6 +19,10 @@ app.use(require('express-session')({  // passport config
   resave: false,
   saveUninitialized: false
 }));
+app.use(function(req, res, next){
+  res.locals.currentUser = req.user;
+  next();
+});
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
