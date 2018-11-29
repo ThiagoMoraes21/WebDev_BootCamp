@@ -57,8 +57,9 @@ form {
   background-position: center;
   color: #fff;
   background-color: #303030;
-  height: 60vh;
+  height: 80vh;
   text-align: center;
+  padding-top: 100px;
 }
 
 .jumbotron.landing, .bg-main{

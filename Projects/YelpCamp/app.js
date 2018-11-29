@@ -36,7 +36,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // remove existent campgrounds and recreate them
-seedDB();
+//seedDB();
 
 //  requiring routes
 app.use('/campgrounds/:id/comments',commentRoutes);
