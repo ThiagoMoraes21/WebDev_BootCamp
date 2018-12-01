@@ -1,14 +1,15 @@
-var express       = require('express'),
-    app           = express(),
-    port          = process.env.PORT || 3000,
-    bodyParser    = require('body-parser'),
-    mongoose      = require('mongoose'),
-    passport      = require('passport'),
-    LocalStrategy = require('passport-local'),
-    User          = require('./models/user'),
-    Campground    = require('./models/campground'),
-    seedDB        = require('./seeds'),
-    Comment       = require("./models/comment");
+var express        = require('express'),
+    app            = express(),
+    port           = process.env.PORT || 3000,
+    bodyParser     = require('body-parser'),
+    mongoose       = require('mongoose'),
+    passport       = require('passport'),
+    LocalStrategy  = require('passport-local'),
+    User           = require('./models/user'),
+    Campground     = require('./models/campground'),
+    seedDB         = require('./seeds'),
+    Comment        = require('./models/comment'),
+    methodOverride = require('method-override');
 
 var commentRoutes    = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
@@ -29,6 +30,7 @@ app.use(function(req, res, next){
 });
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(methodOverride('_method'));
 
 //  require passport methods for authentication
 passport.use(new LocalStrategy(User.authenticate()));
