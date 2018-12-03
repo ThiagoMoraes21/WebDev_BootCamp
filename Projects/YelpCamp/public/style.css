@@ -57,7 +57,7 @@ form {
   background-position: center;
   color: #fff;
   background-color: #303030;
-  height: 80vh;
+  height: 90vh;
   text-align: center;
   padding-top: 100px;
 }
@@ -104,12 +104,13 @@ form {
   padding: 0;
 }
 
-.thumbnail .caption-full {
+.thumbnail .caption-full{
   padding: 10px;
 }
 
-.thumbnail .caption {
-  text-align: center;
+.thumbnail .caption, form, p  {
+  display: inline;
+  margin-left: 5px;
 }
 
 .lead {

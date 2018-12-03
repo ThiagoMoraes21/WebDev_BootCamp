@@ -93,6 +93,18 @@ router.put('/:id', function(req, res){
   });
 });
 
+//  DESTROY - Delete a especific campground
+router.delete('/:id', function(req, res){
+  Campground.findByIdAndRemove(req.params.id, function(err){
+    if (err) {
+      console.log('Error trying to delete item:\n' + err);
+      res.redirect('/campgrounds');
+    } else {
+      res.redirect('/campgrounds');
+    }
+  });
+});
+
 //  Middleware that checks user authentication
 function isLoggedIn(req, res, next){
   if (req.isAuthenticated()) {
