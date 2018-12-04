@@ -3,7 +3,7 @@ var router     = express.Router({mergeParams: true});
 var Campground = require('../models/campground');
 var Comment    = require('../models/comment');
 
-//  Comments new
+//  COMMENTS NEW ROUTE
 router.get("/new", isLoggedIn, function(req, res){
   Campground.findById(req.params.id, function(err, campground){
     if (err) {
@@ -14,13 +14,13 @@ router.get("/new", isLoggedIn, function(req, res){
   });
 });
 
-//  Comments create
+//  COMMENTS CREATE ROUTE
 router.post("/", isLoggedIn, function(req, res){
   //  lookup campground using ID
   Campground.findById(req.params.id, function(err, campground){
     if (err) {
       console.log("Error trying to find the campground\n" + err);
-      res.redirect("/campgrounds")
+      res.redirect("back")
     } else {
       //  create new comment
       Comment.create(req.body.comment, function(err, comment){
@@ -35,10 +35,38 @@ router.post("/", isLoggedIn, function(req, res){
           // push the new comment into the especified campground
           campground.comments.push(comment);
           campground.save();
-          res.redirect("/campgrounds/" + campground._id); //  redirect to show page
+          res.redirect("/campgrounds/" + req.params.id); //  redirect to show page
         }
       });
     }
+  });
+});
+
+//  COMMENTS EDIT ROUTE
+router.get('/:comment_id/edit', function(req, res){
+  Comment.findById(req.params.comment_id, function(err, foundComment){
+    if (err) {
+      console.log('Error trying to find the comment: \n' + err);
+      res.redirect('back');
+    } else {
+      res.render('comments/edit', {
+        campground_id: req.params.id,
+        comment: foundComment
+      });
+    }
+  });
+});
+
+//  COMMENTS UPDATE ROUTE
+router.put('/:comment_id', function(req, res){
+  Comment.findByIdAndUpdate(req.params.comment_id, req.body.comment,
+    function(err, updatedComment){
+      if (err) {
+        console.log('Error trying to update the comment: \n' + err);
+        res.redirect('back');
+      } else {
+        res.redirect('/campgrounds/' + req.params.id);
+      }
   });
 });
 
