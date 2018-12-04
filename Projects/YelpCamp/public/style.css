@@ -1,7 +1,6 @@
 body, html {
-  background: #154d8c;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #154d8c, #3182bf);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #154d8c, #3182bf); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #485563;
+  background: linear-gradient(to right, #29323c 0%, #485563 100%);
   margin: 0;
   padding: 0;
   height: 100%;
@@ -56,7 +55,7 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  background-color: #303030;
+  background-color: #202020;
   height: 90vh;
   text-align: center;
   padding-top: 100px;
@@ -81,13 +80,11 @@ form {
 
 .comments-section {
   color: #fff;
-  background-color: #303030;
-  /* width: 80%; */
+  background-color: #202020;
   border-radius: 5px;
   padding: 20px 40px;
   margin: 0 auto;
   text-align: left;
-  /* float: right; */
 }
 
 .thumbnail img {
@@ -97,10 +94,10 @@ form {
 }
 
 .thumbnail {
-  background-color: #303030;
-  border-color: #303030;
+  background-color: #202020;
+  border-color: #202020;
   color: #fff;
-  text-align: justify;
+  text-align: center;
   padding: 0;
 }
 
@@ -108,7 +105,11 @@ form {
   padding: 10px;
 }
 
-.thumbnail .caption, form, p  {
+.thumbnail p, h4, .title {
+  display: inline;
+}
+
+.align-element {
   display: inline;
   margin-left: 5px;
 }

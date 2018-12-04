@@ -67,19 +67,14 @@ router.get("/:id", function(req, res){
 });
 
 //  EDIT - Show a form to edit the campground
-router.get("/:id/edit", function(req, res){
-  Campground.findById(req.params.id, function(err, foundCamp){
-    if (err) {
-      console.log('Error trying to find the campground' + err);
-      res.redirect('/campgrounds/' + req.params.id);
-    } else {
+router.get("/:id/edit", checkCampOwnership, function(req, res){
+    Campground.findById(req.params.id, function(err, foundCamp){
       res.render('campgrounds/edit', {campground: foundCamp});
-    }
-  });
+    });
 });
 
 //  UPDATE - Update the form and redirect somewhere
-router.put('/:id', function(req, res){
+router.put('/:id', checkCampOwnership, function(req, res){
   //  find the campground and update
   Campground.findByIdAndUpdate(req.params.id, req.body.campground,
    function(err, updatedCamp){
@@ -94,7 +89,7 @@ router.put('/:id', function(req, res){
 });
 
 //  DESTROY - Delete a especific campground
-router.delete('/:id', function(req, res){
+router.delete('/:id', checkCampOwnership, function(req, res){
   Campground.findByIdAndRemove(req.params.id, function(err){
     if (err) {
       console.log('Error trying to delete item:\n' + err);
@@ -104,6 +99,26 @@ router.delete('/:id', function(req, res){
     }
   });
 });
+
+function checkCampOwnership(req, res, next){
+  if (req.isAuthenticated()) {
+    Campground.findById(req.params.id, function(err, foundCamp){
+      if (err) {
+        console.log('Error trying to find the campground' + err);
+        res.redirect('back');
+      } else {
+        //  check if the user own the campground
+        if (foundCamp.author.id.equals(req.user._id)) {
+          next();
+        } else {
+          res.redirect('back');
+        }
+      }
+    });
+  } else {
+    res.redirect('/login');
+  }
+}
 
 //  Middleware that checks user authentication
 function isLoggedIn(req, res, next){

@@ -13,21 +13,26 @@
       <div class="thumbnail show">
         <img class="bg-show-page" src="<%= campground.image %>" alt="<%= campground.name %>">
           <div class="caption-full">
-            <h4 class="pull-right">$9.00/night</h4>
-            <a href="#"><h3 class="title"><%= campground.name %> </h3></a>
-            <br>
+            <a href="#"><h3 class="title"><%= campground.name %> - </h3></a>
+            <h4 class="text-right">$9.00/night</h4>
+            <br><br>
             <p class="text-justify desc"><%= campground.description %></p>
             <br><br>
             <p>
-            <a class="btn btn-primary"
-            href="/campgrounds/<%= campground._id %>/edit">Edit</a>
-            </p>
-            <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
-              <button class="btn btn-danger" name="button">Delete</button>
-            </form>
             <p class="text-center">
             <em>Submitted by <a href="#"><%= campground.author.username %></a> </em>
             </p>
+            <br><br>
+
+            <% if(currentUser && campground.author.id.equals(currentUser._id)){ %>
+              <a class="btn btn-primary"
+              href="/campgrounds/<%= campground._id %>/edit">Edit</a>
+              </p>
+              <form class="align-element" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="post">
+                <button class="btn btn-danger" name="button">Delete</button>
+              </form>
+            <% } %>
+
           </div>
       </div>
     </div>
