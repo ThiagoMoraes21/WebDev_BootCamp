@@ -74,8 +74,7 @@ form {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  /* height: 100vh; */
-  position: absolute;
+  /* position: absolute; */
 }
 
 .comments-section {
@@ -144,6 +143,13 @@ form {
 
 .container.not-found h1 {
   font-size: 13em;
+}
+
+.alert-container{
+  position: absolute;
+  width: 80%;
+  margin: 3px 10%;
+  text-align: center;
 }
 
 @media only screen and (min-width: 770px){
