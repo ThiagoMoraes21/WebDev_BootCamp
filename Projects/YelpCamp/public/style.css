@@ -1,6 +1,5 @@
 body, html {
-  background: #485563;
-  background: linear-gradient(to right, #29323c 0%, #485563 100%);
+  background: #212c58;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -9,6 +8,7 @@ body, html {
 
 h1, h3, h4 {
   color: #fff;
+  margin: 0;
 }
 
 img {
@@ -20,8 +20,76 @@ form {
   margin: 40px auto;
 }
 
+#parallax {
+  position: relative;
+}
+
 .navbar {
+  margin-top: 10px;
   margin-bottom: 0px;
+  padding: 10px 90px;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+}
+
+.colorfullNavbar {
+  margin: 0 auto;
+  padding: 10px 90px;
+  background-color: rgba(25, 33, 74);
+  border-color: rgba(34, 44, 90);
+  box-shadow: 0px 5px 10px rgba(34, 44, 90, 0.5);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.2s ease-in-out;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+  color: #fff;
+}
+
+.navbar-inverse .navbar-nav>.active>a{
+  background: #e5524c;
+  border-radius: 5px;
+}
+
+.navbar-inverse .navbar-toggle {
+  background: #e5524c;
+  border-color: #e5524c;
+}
+
+.navbar-inverse .navbar-toggle:hover {
+  background-color: #d64b41;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+  background: #e5524c;
+  border-color: #e5524c;
+}
+
+.navbar-inverse .navbar-nav>.active>a:hover{
+  background-color: #d64b41;
+}
+
+.navbar-inverse .navbar-brand {
+  color: #fff;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #212c58;
+    border-color: #212c58;
+    box-shadow: 1px 7px 15px rgba(28, 37, 78, 0.7);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #1c244c;
+  box-shadow: 1px 3px 9px rgba(28, 37, 78, 0.7);
 }
 
 .image-box {
@@ -31,13 +99,10 @@ form {
   float: left;
 }
 
-.camp-form {
-  text-align: center;
-  margin-top: 40px;
-}
-
 .some-space {
-  padding: 10px 30px;
+  padding-top: 90px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .bg-show-page {
@@ -55,14 +120,43 @@ form {
   background-repeat: no-repeat;
   background-position: center;
   color: #fff;
-  background-color: #202020;
-  height: 90vh;
+  background-color: #0b1135;
+  height: 95vh;
   text-align: center;
-  padding-top: 100px;
+  padding-top: 190px;
 }
 
 .jumbotron.landing, .bg-main{
-  background-image: url('https://source.unsplash.com/3fJOXw1RbPo');
+  /* background-image: url('https://source.unsplash.com/3fJOXw1RbPo'); */
+  /* background-image: url('img/bg7.svg'); */
+  background-image: url('img/bg3.jpg');
+  background-position: 0 30%;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.arrow {
+  position: relative;
+  margin: 0 auto;
+  width: 25px;
+  height: 25px;
+  border-bottom: 1.5px solid #fff;
+  border-right: 1.5px solid #fff;
+  transform: rotate(45deg);
+  transition: all 0.3s ease-in-out;
+  animation: moveArrow 1.4s ease-in-out infinite;
+}
+
+@keyframes moveArrow {
+  0% {
+    margin-top: 35vh;
+  }
+  50% {
+    margin-top: 38vh;
+  }
+  100% {
+    margin-top: 35vh;
+  }
 }
 
 .container {
@@ -71,10 +165,9 @@ form {
 
 .bg-main {
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  /* position: absolute; */
+  height: 100vh;
 }
 
 .comments-section {
@@ -93,8 +186,8 @@ form {
 }
 
 .thumbnail {
-  background-color: #202020;
-  border-color: #202020;
+  background-color: #45a5cc;
+  border-color: #45a5cc;
   color: #fff;
   text-align: center;
   padding: 0;
@@ -147,13 +240,49 @@ form {
 
 .alert-container{
   position: absolute;
-  width: 80%;
-  margin: 3px 10%;
+  width: 20%;
+  margin: 100px 40%;
   text-align: center;
 }
 
-@media only screen and (min-width: 770px){
+.high-light {
+  background-color: #45a5cc;
+  width: 40%;
+  min-height: 20px;
+  margin: 50px 30%;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 1px 9px 15px rgba(28, 37, 78, 0.9);
+}
+
+@media only screen and (max-width: 785px){
   .col-md-9 {
     float: right;
+  }
+  .high-light {
+    width: 100%;
+    margin: 40px 0%;
+  }
+  .jumbotron {
+    height: 69vh!important;
+  }
+  .jumbotron.landing, .bg-main  {
+    background-position: 40% 20%;
+  }
+  .arrow {
+    display: none;
+  }
+  .navbar {
+    padding: 10px 0px;
+  }
+}
+
+@media only screen and (max-width: 1040px){
+  .jumbotron {
+    height: 78vh;
+  }
+  .jumbotron.landing, .bg-main  {
+    background-position: 40% 30%;
   }
 }
