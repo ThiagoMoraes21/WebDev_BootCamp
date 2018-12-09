@@ -14,7 +14,7 @@
           <img class="bg-show-page" src="<%= campground.image %>" alt="<%= campground.name %>">
             <div class="caption-full">
               <a href="#"><h3 class="title"><%= campground.name %> - </h3></a>
-              <h4 class="text-right">$9.00/night</h4>
+              <h4 class="text-right">$<%= campground.price %>/night</h4>
               <br><br>
               <p class="text-justify desc"><%= campground.description %></p>
               <br><br>
@@ -42,7 +42,7 @@
           <h4 class="text-center"><strong>Reviews</strong></h4><hr><br>
           <% campground.comments.forEach(function(comment){ %>
             <div class="row">
-              <div class="col-md-12 bg-primary">
+              <div class="col-md-12 comments-bg">
                 <p>
                   <strong><%= comment.author.username %></strong>
                   <span class="pull-right">10 days ago</span>
@@ -61,9 +61,7 @@
                 <% } %>
               </div>
             </div>
-            <br />
             <% }); %>
-            <br />
             <div class="text-center">
                 <a class="btn btn-primary btn-lg" href="/campgrounds/<%= campground._id %>/comments/new">Leave a review</a>
             </div>

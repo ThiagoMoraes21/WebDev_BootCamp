@@ -25,6 +25,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   // get the data from the form
   var name = req.body.name;
   var image = req.body.image;
+  var price = req.body.price;
   var desc = req.body.description;
   var author = {
     id: req.user._id,
@@ -32,6 +33,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   }
   var newCampground = {
     name: name,
+    price: price,
     image: image,
     description: desc,
     author: author
@@ -39,11 +41,11 @@ router.post("/", middleware.isLoggedIn, function(req, res){
   // Create a new campground and save to DB
   Campground.create(newCampground, function(err, createdCampground){
     if(err){
-      console.log('Create new campground failed: \n' + err);
+      req.flash('error', 'Something went wrong :(');
       res.redirect('/campgrounds/new');
     } else {
       // redirect back to campgrounds page
-      console.log(createdCampground);
+      req.flash('success', 'Campground created!');
       res.redirect("/campgrounds/" + createdCampground._id);
     }
   });
@@ -86,7 +88,7 @@ router.put('/:id', middleware.checkCampOwnership, function(req, res){
         res.redirect('/campgrounds/' + req.params.id);
       } else {
         //  redirect to show page
-        res.redirect('back');
+        res.redirect('/campgrounds/' + req.params.id);
       }
   });
 });
