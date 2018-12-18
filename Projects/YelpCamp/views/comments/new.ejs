@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 
-<div class="container bg-main">
-  <div class="row camp-form">
+<div class="container bg-main jumbotron">
+  <div class="row">
     <h1>New Comment to <%= campground.name %></h1>
     <form action="/campgrounds/<%= campground._id %>/comments" method="post">
       <div class="form-group">

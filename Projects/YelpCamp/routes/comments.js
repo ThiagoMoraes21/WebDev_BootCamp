@@ -36,7 +36,7 @@ router.post("/", middleware.isLoggedIn, function(req, res){
           // push the new comment into the especified campground
           campground.comments.push(comment);
           campground.save();
-          res.redirect("back"); //  redirect to show page
+          res.redirect("/campgrounds/" + req.params.id); //  redirect to show page
         }
       });
     }
