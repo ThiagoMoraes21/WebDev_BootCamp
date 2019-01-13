@@ -17,7 +17,9 @@ var commentRoutes    = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes      = require('./routes/index');
 
-mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
+mongoose.connect('mongodb://thiago:323Sowhat@ds255784.mlab.com:55784/yelpcamp', { useNewUrlParser: true });
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
@@ -42,7 +44,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 // remove existent campgrounds and recreate them
-//seedDB();
+// seedDB();
 
 //  requiring routes
 app.use('/campgrounds/:id/comments',commentRoutes);
