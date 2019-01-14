@@ -17,6 +17,7 @@ var commentRoutes    = require('./routes/comments'),
     campgroundRoutes = require('./routes/campgrounds'),
     indexRoutes      = require('./routes/index');
 
+//  Connecting to a remote data base (mlab.com)
 // mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true });
 mongoose.connect('mongodb://thiago:323Sowhat@ds255784.mlab.com:55784/yelpcamp', { useNewUrlParser: true });
 
@@ -38,6 +39,7 @@ app.use(function(req, res, next){
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
+
 //  require passport methods for authentication
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
