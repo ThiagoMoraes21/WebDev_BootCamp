@@ -9,15 +9,17 @@ var express = require('express'),
     Blog = require('./models/blog');
 
 //  APP CONFIG
-mongoose.connect('mongodb://localhost/blog', { useNewUrlParser: true });
+// mongoose.connect('mongodb://localhost/blog', { useNewUrlParser: true });
+mongoose.connect('mongodb://thiago:323Sowhat@ds157654.mlab.com:57654/blog', { useNewUrlParser: true });
+
+//  Create blog posts
+// seedDB();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(expressSanitizer());
 app.use(express.static('public'));
 app.use(methodOverrid('_method'));
 app.set('view engine', 'ejs');
-
-//  Create blog posts
-// seedDB();
 
 //  RESTIFUL ROUTES
 app.get("/", function(req, res){
