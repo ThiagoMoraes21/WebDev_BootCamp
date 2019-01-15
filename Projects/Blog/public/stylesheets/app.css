@@ -83,6 +83,28 @@ span {
 }
 
 
+/* POST */
+.ui.huge.header {
+  position: absolute;
+  font-size: 5rem;
+  top: 29vh;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+}
+
+.ui.text.container.post {
+  padding: 40px;
+}
+
+.ui.text.container.post h2 {
+  text-align: center;
+}
+
+.buttons {
+  text-align: center;
+}
+
 /* FOOTER */
 footer {
   min-height: 30vh;
