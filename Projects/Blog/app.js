@@ -4,7 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose'),
     methodOverrid = require('method-override'),
-    expressSanitizer = require('express-sanitizer');
+    expressSanitizer = require('express-sanitizer'),
+    seedDB = require('./seeds'),
+    Blog = require('./models/blog');
 
 //  APP CONFIG
 mongoose.connect('mongodb://localhost/blog', { useNewUrlParser: true });
@@ -14,15 +16,8 @@ app.use(express.static('public'));
 app.use(methodOverrid('_method'));
 app.set('view engine', 'ejs');
 
-//  MONGOOSE/MODEL CONFIG
-var blogSchema = new mongoose.Schema({
-  title: String,
-  image: String,
-  body: String,
-  created: {type: Date, default: Date.now}
-});
-
-var Blog = mongoose.model("Blog", blogSchema);
+//  Create blog posts
+// seedDB();
 
 //  RESTIFUL ROUTES
 app.get("/", function(req, res){

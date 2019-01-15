@@ -1,14 +1,23 @@
+<header>
+  <div class="headerTitle">
+    <h1>Anything Blog</h1>
+    <h4>Write about anything that you want</h4>
+  </div>
+</header>
+
 <% include partials/header %>
 <div class="ui container main">
   <% blogs.forEach(function(blog){ %>
-    <div class="ui text container segment">
-      <h2><%= blog.title %></h2>
-      <img src="<%= blog.image %>"><br  />
-      <span><%= blog.created.toDateString() %></span>
-      <p><%- blog.body.substring(0, 100) %>...</p>
-      <a class="ui black button" href="/blogs/<%= blog._id %>">
-      Read More
-      </a>
+    <div class="ui grid text segment">
+      <img class="ten wide column" src="<%= blog.image %>"><br  />
+      <div class="six wide column">
+        <h2><%= blog.title %></h2><br>
+        <span><%= blog.created.toDateString() %></span>
+        <p><%- blog.body.substring(0, 250) %>...</p><br>
+        <a class="ui black button" href="/blogs/<%= blog._id %>">
+          Read More
+        </a>
+      </div>
     </div>
   <% }); %>
 </div>
