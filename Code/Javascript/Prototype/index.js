@@ -17,6 +17,7 @@ function Person2(name){
   this.name = name;
 }
 
+//  Only define the method ONCE!
 Person2.prototype.sayHi = function(){
   console.log(`Hi ${this.name}`);
 }
